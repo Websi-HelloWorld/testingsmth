@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Datenschutzerklärung</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        // Dark Mode via class (gleich wie auf den anderen Seiten)
+        (function(){
+            try {
+                const pref = localStorage.getItem('theme');
+                if (pref === 'dark' || (!pref && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch(e) {}
+        })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' };</script>
+        <style>
+        :root { color-scheme: light dark; }
+        html, body { height: 100%; }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+            transition: background-color .35s, color .35s;
+            background:
+                radial-gradient(1200px 600px at 10% -10%, rgba(59,130,246,.12), transparent 50%),
+                radial-gradient(1000px 500px at 110% 10%, rgba(99,102,241,.12), transparent 50%),
+                linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0));
+        }
+        /* Seite selbst nicht scrollen; nur der Content-Bereich */
+        html, body { overflow: hidden; }
+        .dark body {
+            background:
+                radial-gradient(1200px 600px at 10% -10%, rgba(37,99,235,.25), transparent 50%),
+                radial-gradient(1000px 500px at 110% 10%, rgba(79,70,229,.25), transparent 50%),
+                linear-gradient(180deg, rgba(17,24,39,.8), rgba(17,24,39,.6));
+        }
+        /* Subtle grain overlay */
+        body::before {
+            content: '';
+            position: fixed; inset: 0; pointer-events: none;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><g fill="none" fill-opacity=".05"><path fill="#000" d="M0 0h1v1H0z"/></g></svg>');
+            opacity: .18;
+        }
+        .glass { background: rgba(255,255,255,0.65); backdrop-filter: blur(8px); border: 1px solid rgba(148,163,184,.35); }
+        .dark .glass { background: rgba(17,24,39,0.55); border-color: rgba(148,163,184,.25); }
+        .card { background: rgba(255,255,255,0.9); border: 1px solid rgba(148,163,184,.35); box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+        .dark .card { background: rgba(17,24,39,0.75); border-color: rgba(148,163,184,.25); box-shadow: 0 10px 28px rgba(0,0,0,.35); }
+        .section-title { font-weight: 800; letter-spacing: -.01em; background: linear-gradient(90deg, #000, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .dark .section-title { background: linear-gradient(90deg, #fff, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        /* Basic typography for readability */
+        main h1 { font-size: 1.75rem; font-weight: 800; margin: 0 0 1rem; }
+        main h2 { font-size: 1.375rem; font-weight: 700; margin-top: 2rem; margin-bottom: .75rem; }
+        main h3 { font-size: 1.125rem; font-weight: 600; margin-top: 1.25rem; margin-bottom: .5rem; }
+        main p { margin: .75rem 0; line-height: 1.7; }
+        main ul { list-style: disc; padding-left: 1.25rem; margin: .75rem 0; }
+        main li { margin: .35rem 0; }
+        a { color: #2563eb; text-decoration: underline; }
+        .dark a { color: #60a5fa; }
+        .btn { display:inline-flex; align-items:center; gap:.5rem; padding:.55rem 1rem; border-radius:.65rem; font-weight:600; transition: transform .12s ease, box-shadow .2s ease, background .2s ease; }
+        .btn:active { transform: translateY(1px); }
+        .btn-primary { color:#fff; background-image: linear-gradient(135deg, #3b82f6, #6366f1); box-shadow: 0 6px 16px rgba(59,130,246,.25); }
+        .btn-primary:hover { box-shadow: 0 10px 22px rgba(59,130,246,.35); }
+        .btn-outline { color:#1f2937; background:transparent; border:1px solid rgba(148,163,184,.45); }
+        .dark .btn-outline { color:#e5e7eb; border-color: rgba(148,163,184,.35); }
+        .btn-outline:hover { background: rgba(148,163,184,.08); }
+        .dark .btn-outline:hover { background: rgba(148,163,184,.12); }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <!-- Header -->
+    <header class="glass shadow p-4 flex justify-between items-center gap-4">
+        <h1 class="text-xl font-extrabold section-title">Datenschutzerklärung</h1>
+        <div class="flex items-center gap-2">
+            <button id="backBtn" type="button" class="btn btn-outline">Zurück</button>
+            <button id="themeToggle" type="button" aria-label="Theme umschalten" class="btn btn-outline">🌙</button>
+        </div>
+    </header>
+
+    <!-- Content -->
+        <main class="p-4 md:p-6 max-w-5xl mx-auto h-[calc(100vh-80px)]">
+            <div class="card rounded-2xl p-6 h-full overflow-y-auto">
+                <h1>Datenschutzerklärung</h1>
+                <p>Zuletzt aktualisiert: 30. September 2025</p>
+                <p>Diese Datenschutzerklärung beschreibt, wie wir personenbezogene Daten verarbeiten, wenn Sie unseren Dienst (die „Website“) nutzen. Sie erklärt, welche Daten wir erheben, zu welchen Zwecken wir diese nutzen, an wen wir sie weitergeben und welche Rechte Sie in Bezug auf Ihre Daten haben.</p>
+                <p>Wir verwenden Ihre personenbezogenen Daten, um den Dienst bereitzustellen und zu verbessern. Durch die Nutzung des Dienstes stimmen Sie der Verarbeitung Ihrer Informationen gemäß dieser Datenschutzerklärung zu. Diese Vorlage basiert inhaltlich auf einem Generator und wurde an unsere Website angepasst.</p>
+
+                <h2>Auslegung und Begriffsbestimmungen</h2>
+                <h3>Auslegung</h3>
+                <p>Begriffe, deren Anfangsbuchstabe großgeschrieben ist, haben die unten festgelegte Bedeutung. Die Definitionen gelten unabhängig davon, ob die Begriffe im Singular oder Plural verwendet werden.</p>
+
+                <h3>Begriffsbestimmungen</h3>
+                <p>Für diese Datenschutzerklärung gilt Folgendes:</p>
+                <ul>
+                    <li><strong>Konto (Account)</strong>: Ein individuelles Benutzerkonto, das Ihnen Zugriff auf unseren Dienst oder Teile davon gewährt.</li>
+                    <li><strong>Verbundene Unternehmen (Affiliate)</strong>: Eine Einheit, die eine Partei kontrolliert, von ihr kontrolliert wird oder unter gemeinsamer Kontrolle steht. „Kontrolle“ bedeutet den Besitz von mindestens 50% der Anteile oder Stimmrechte.</li>
+                    <li><strong>Unternehmen</strong> (in dieser Erklärung auch „wir“, „uns“, „unser“): PCBGaming.</li>
+                    <li><strong>Cookies</strong>: Kleine Textdateien, die auf Ihrem Endgerät gespeichert werden, um Informationen zu speichern (z. B. Sitzungen, Einstellungen, Nutzungsverhalten).</li>
+                    <li><strong>Land</strong>: Österreich.</li>
+                    <li><strong>Gerät</strong>: Jedes internetfähige Gerät, z. B. Computer, Smartphone oder Tablet.</li>
+                    <li><strong>Personenbezogene Daten</strong>: Alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen.</li>
+                    <li><strong>Dienst</strong>: Unsere Website bzw. das von uns bereitgestellte Online-Angebot.</li>
+                    <li><strong>Dienstanbieter</strong>: Natürliche oder juristische Personen, die in unserem Auftrag Daten verarbeiten (z. B. Hosting, Analyse, Support).</li>
+                    <li><strong>Nutzungsdaten</strong>: Daten, die automatisch beim Besuch oder bei der Nutzung des Dienstes anfallen (z. B. IP-Adresse, Browsertyp, aufgerufene Seiten, Verweildauer).</li>
+                    <li><strong>Website</strong>: PCBGaming, erreichbar unter <a href="https://PCBGaming.at" target="_blank" rel="noopener">PCBGaming.at</a>.</li>
+                    <li><strong>Sie</strong>: Die nutzende Person des Dienstes bzw. die Organisation, in deren Auftrag eine Person den Dienst nutzt.</li>
+                </ul>
+
+                <h2>Erhebung und Verwendung personenbezogener Daten</h2>
+                <h3>Arten der erhobenen Daten</h3>
+                <h4>Personenbezogene Daten</h4>
+                <p>Bei der Nutzung unseres Dienstes können wir Sie um bestimmte Angaben bitten, mit denen Sie kontaktiert oder identifiziert werden können. Dazu können gehören (ohne Anspruch auf Vollständigkeit):</p>
+                <ul>
+                    <li>E-Mail-Adresse</li>
+                    <li>Weitere Kontaktdaten, die Sie uns mitteilen</li>
+                </ul>
+
+                <h4>Nutzungsdaten</h4>
+                <p>Nutzungsdaten werden automatisch beim Besuch der Website erhoben. Dazu zählen beispielsweise Ihre IP-Adresse, Browsertyp und -version, die von Ihnen besuchten Seiten, Datum und Uhrzeit des Besuchs, die auf den Seiten verbrachte Zeit, eindeutige Gerätekennungen sowie weitere Diagnose- und Protokolldaten.</p>
+                <p>Bei Zugriff über mobile Endgeräte können zusätzlich Gerätetyp, eindeutige Geräte-ID, Betriebssystem, Browsertyp sowie weitere technische Daten erfasst werden.</p>
+
+                <h3>Cookies und ähnliche Technologien</h3>
+                <p>Wir verwenden Cookies und ähnliche Technologien (z. B. Pixel, Tags), um Aktivitäten auf unserer Website nachzuverfolgen, Funktionen bereitzustellen und die Nutzung zu analysieren. Sie können Ihren Browser so einstellen, dass er Cookies ablehnt oder Sie warnt, wenn Cookies gesendet werden. Ohne Cookies stehen Ihnen jedoch möglicherweise nicht alle Funktionen zur Verfügung.</p>
+                <p>Cookies können <em>Session-Cookies</em> (werden beim Schließen des Browsers gelöscht) oder <em>dauerhafte Cookies</em> (bleiben bis zum Ablaufdatum bzw. bis zur Löschung auf Ihrem Gerät) sein.</p>
+                <p>Wir setzen insbesondere ein:</p>
+                <ul>
+                    <li><strong>Notwendige/essenzielle Cookies</strong> (Session): Erforderlich, um den Dienst bereitzustellen, Nutzer zu authentifizieren und Missbrauch zu verhindern.</li>
+                    <li><strong>Einwilligungs-/Hinweis-Cookies</strong> (Persistent): Speichern, ob Sie der Cookie-Nutzung zugestimmt haben.</li>
+                    <li><strong>Funktions-Cookies</strong> (Persistent): Merken sich Ihre Einstellungen (z. B. Login, Sprache), um die Nutzung komfortabler zu gestalten.</li>
+                </ul>
+                <p>Weitere Informationen zu den von uns verwendeten Cookies und Ihren Wahlmöglichkeiten erhalten Sie in unserer Cookie-Übersicht (sofern vorhanden) oder in den Browsereinstellungen.</p>
+
+                <h3>Zwecke der Datenverarbeitung</h3>
+                <p>Wir verarbeiten personenbezogene Daten zu folgenden Zwecken:</p>
+                <ul>
+                    <li><strong>Bereitstellung und Betrieb</strong> des Dienstes, einschließlich Überwachung der Nutzung und Fehlerbehebung.</li>
+                    <li><strong>Kontoverwaltung</strong>: Verwaltung Ihrer Registrierung und Ihres Zugriffs auf Funktionen.</li>
+                    <li><strong>Vertragserfüllung</strong>: Durchführung und Abwicklung vertraglicher Beziehungen.</li>
+                    <li><strong>Kontaktaufnahme</strong>: Informationen zu Funktionen, Diensten oder sicherheitsrelevanten Updates per E-Mail oder anderen Kommunikationsmitteln.</li>
+                    <li><strong>Informationen über ähnliche Angebote</strong>, sofern gesetzlich zulässig und Sie dem nicht widersprochen haben.</li>
+                    <li><strong>Bearbeitung von Anfragen</strong> und Support-Fällen.</li>
+                    <li><strong>Unternehmensvorgänge</strong>: Bewertung/ Durchführung von Umstrukturierungen, Zusammenschlüssen, Übernahmen, bei denen personenbezogene Daten übertragen werden können.</li>
+                    <li><strong>Weitere Zwecke</strong>: Analyse, Nutzungsstatistiken, Optimierung des Dienstes und der Nutzererfahrung.</li>
+                </ul>
+
+                                <h3>Rechtsgrundlagen der Verarbeitung (Art. 6 DSGVO)</h3>
+                                <p>Je nach Kontext stützen wir die Verarbeitung auf folgende Rechtsgrundlagen:</p>
+                                <ul>
+                                    <li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> (Vertragserfüllung): z. B. zur Bereitstellung von Funktionen Ihres Kontos und des Dienstes.</li>
+                                    <li><strong>Art. 6 Abs. 1 lit. c DSGVO</strong> (rechtliche Verpflichtung): z. B. Aufbewahrungspflichten.</li>
+                                    <li><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> (berechtigtes Interesse): z. B. Sicherheit, Fehleranalyse, Verbesserung des Dienstes. Dabei berücksichtigen wir Ihre Interessen und Grundrechte.</li>
+                                    <li><strong>Art. 6 Abs. 1 lit. a DSGVO</strong> (Einwilligung): sofern wir Sie um Ihre Zustimmung bitten (z. B. bestimmte Cookies/Marketing). Eine Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.</li>
+                                </ul>
+
+                <h3>Weitergabe personenbezogener Daten</h3>
+                <p>Wir geben personenbezogene Daten nur im gesetzlich zulässigen Rahmen weiter, z. B.:</p>
+                <ul>
+                    <li><strong>an Dienstanbieter</strong>, die in unserem Auftrag Leistungen erbringen (z. B. Hosting, Analyse, Support),</li>
+                    <li><strong>im Rahmen von Unternehmensvorgängen</strong> (z. B. Fusion, Verkauf von Vermögenswerten),</li>
+                    <li><strong>an verbundene Unternehmen</strong>, sofern diese an diese Datenschutzerklärung gebunden sind,</li>
+                    <li><strong>an Geschäftspartner</strong> zur Angebotserstellung, sofern zulässig,</li>
+                    <li><strong>mit Ihrer Einwilligung</strong> oder wenn dies gesetzlich vorgeschrieben ist.</li>
+                </ul>
+
+                <h3>Aufbewahrung</h3>
+                <p>Wir speichern personenbezogene Daten nur so lange, wie es für die genannten Zwecke erforderlich ist oder wie es gesetzliche Aufbewahrungspflichten vorsehen. Nutzungsdaten können kürzer gespeichert werden, es sei denn, sie dienen der Sicherheit oder Funktionsverbesserung oder sind aus rechtlichen Gründen länger aufzubewahren.</p>
+
+                <h3>Übermittlung in Drittländer</h3>
+                <p>Eine Verarbeitung kann auch außerhalb Ihres Landes stattfinden, sofern dort ein angemessenes Datenschutzniveau besteht oder geeignete Garantien vorliegen (z. B. Standardvertragsklauseln). Durch die Nutzung des Dienstes stimmen Sie einer solchen Übermittlung zu.</p>
+
+                <h3>Löschung Ihrer personenbezogenen Daten</h3>
+                <p>Sie haben das Recht, die Löschung Ihrer personenbezogenen Daten zu verlangen. Innerhalb des Dienstes können Sie bestimmte Angaben selbst entfernen oder berichtigen (z. B. über Kontoeinstellungen). Bitte beachten Sie, dass wir in bestimmten Fällen Daten weiter speichern müssen, um rechtlichen Verpflichtungen nachzukommen.</p>
+
+                <h3>Offenlegung in besonderen Fällen</h3>
+                <h4>Geschäftsvorgänge</h4>
+                <p>Im Falle von Zusammenschlüssen, Übernahmen oder Verkäufen von Vermögenswerten können personenbezogene Daten übertragen werden. Hierüber informieren wir vorab, soweit möglich.</p>
+                <h4>Strafverfolgung/Behörden</h4>
+                <p>Wir können personenbezogene Daten offenlegen, wenn dies gesetzlich vorgeschrieben ist oder auf berechtigte behördliche Anfragen erfolgt (z. B. Gerichte, Behörden).</p>
+                <h4>Rechtliche Anforderungen</h4>
+                <p>Eine Offenlegung kann erforderlich sein, um rechtlichen Verpflichtungen nachzukommen, unsere Rechte/Eigentum zu schützen, Missbrauch zu verhindern oder die Sicherheit von Nutzern/Öffentlichkeit zu wahren.</p>
+
+                <h3>Sicherheit</h3>
+                <p>Wir setzen angemessene technische und organisatorische Maßnahmen ein, um personenbezogene Daten zu schützen. Bitte beachten Sie, dass keine Methode der Datenübertragung oder -speicherung zu 100% sicher ist.</p>
+
+                <h2>Datenschutz von Kindern</h2>
+                <p>Unser Dienst richtet sich nicht an Kinder unter 13 Jahren. Wir erfassen wissentlich keine Daten von Kindern unter 13. Eltern/Erziehungsberechtigte können uns kontaktieren, wenn sie glauben, dass ein Kind uns Daten bereitgestellt hat; wir werden solche Daten löschen, sofern keine gesetzliche Pflicht zur Aufbewahrung besteht.</p>
+
+                <h2>Links zu externen Websites</h2>
+                <p>Unsere Website kann Links zu externen Websites enthalten, die nicht von uns betrieben werden. Für deren Inhalte und Datenschutzpraktiken sind ausschließlich die jeweiligen Betreiber verantwortlich. Wir empfehlen, die Datenschutzhinweise jeder besuchten Website zu prüfen.</p>
+
+                <h2>Änderungen dieser Datenschutzerklärung</h2>
+                <p>Wir können diese Datenschutzerklärung von Zeit zu Zeit aktualisieren. Änderungen veröffentlichen wir auf dieser Seite. Das Datum „Zuletzt aktualisiert“ wird entsprechend angepasst. Bitte prüfen Sie diese Erklärung regelmäßig.</p>
+
+                                <h2>Ihre Rechte (Art. 15–21 DSGVO)</h2>
+                                <p>Sie haben – unter den gesetzlichen Voraussetzungen – folgende Rechte:</p>
+                                <ul>
+                                    <li><strong>Auskunft</strong> über die von uns verarbeiteten personenbezogenen Daten (Art. 15 DSGVO)</li>
+                                    <li><strong>Berichtigung</strong> unrichtiger oder Vervollständigung unvollständiger Daten (Art. 16 DSGVO)</li>
+                                    <li><strong>Löschung</strong> („Recht auf Vergessenwerden“, Art. 17 DSGVO)</li>
+                                    <li><strong>Einschränkung der Verarbeitung</strong> (Art. 18 DSGVO)</li>
+                                    <li><strong>Datenübertragbarkeit</strong> (Art. 20 DSGVO)</li>
+                                    <li><strong>Widerspruch</strong> gegen Verarbeitungen auf Grundlage berechtigter Interessen (Art. 21 DSGVO)</li>
+                                    <li><strong>Widerruf</strong> erteilter Einwilligungen mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
+                                    <li><strong>Beschwerde</strong> bei einer Aufsichtsbehörde, z. B. in Österreich bei der Datenschutzbehörde (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">dsb.gv.at</a>)</li>
+                                </ul>
+                                <p>Zur Ausübung Ihrer Rechte können Sie uns jederzeit kontaktieren.</p>
+
+                                <h2>Verantwortlicher und Kontakt</h2>
+                                <p><strong>Verantwortlicher</strong> im Sinne der DSGVO:</p>
+                                <p>PCBGaming<br>
+                                [Straße und Hausnummer]<br>
+                                [PLZ] [Ort], Österreich</p>
+                <p>Bei Fragen zu dieser Datenschutzerklärung erreichen Sie uns unter:</p>
+                <ul>
+                    <li>E-Mail: j.feichtner06@gmail.com</li>
+                </ul>
+        </div>
+    </main>
+
+    <script>
+        // Theme Toggle
+        (function(){
+            const btn = document.getElementById('themeToggle');
+            if(!btn) return;
+            function setIcon(){
+                const dark = document.documentElement.classList.contains('dark');
+                btn.textContent = dark ? '☀️' : '🌙';
+                btn.setAttribute('aria-label', dark ? 'Zum hellen Theme wechseln' : 'Zum dunklen Theme wechseln');
+            }
+            setIcon();
+            btn.addEventListener('click', ()=>{
+                const isDark = document.documentElement.classList.toggle('dark');
+                try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch(e) {}
+                setIcon();
+            });
+        })();
+
+                // Back behavior: close new tab if possible, otherwise navigate back
+        (function(){
+            function closeOrBack(){
+                try {
+                    if (window.opener && !window.opener.closed) {
+                        try { window.opener.focus(); } catch(e) {}
+                    }
+                } catch(e) {}
+                window.close();
+                setTimeout(function(){
+                    if (history.length > 1) {
+                        history.back();
+                    }
+                }, 10);
+            }
+            const backBtn = document.getElementById('backBtn');
+            if (backBtn) backBtn.addEventListener('click', closeOrBack);
+            try { history.pushState(null, '', location.href); } catch(e) {}
+            window.addEventListener('popstate', function(){ closeOrBack(); });
+        })();
+    </script>
+</body>
+</html>

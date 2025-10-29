@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nutzungsbedingungen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        // Dark Mode via class (gleich wie auf den anderen Seiten)
+        (function(){
+            try {
+                const pref = localStorage.getItem('theme');
+                if (pref === 'dark' || (!pref && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch(e) {}
+        })();
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' };</script>
+        <style>
+        :root { color-scheme: light dark; }
+        html, body { height: 100%; }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+            transition: background-color .35s, color .35s;
+            background:
+                radial-gradient(1200px 600px at 10% -10%, rgba(59,130,246,.12), transparent 50%),
+                radial-gradient(1000px 500px at 110% 10%, rgba(99,102,241,.12), transparent 50%),
+                linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0));
+        }
+        /* Seite selbst nicht scrollen; nur der Content-Bereich */
+        html, body { overflow: hidden; }
+        .dark body {
+            background:
+                radial-gradient(1200px 600px at 10% -10%, rgba(37,99,235,.25), transparent 50%),
+                radial-gradient(1000px 500px at 110% 10%, rgba(79,70,229,.25), transparent 50%),
+                linear-gradient(180deg, rgba(17,24,39,.8), rgba(17,24,39,.6));
+        }
+        /* Subtle grain overlay */
+        body::before {
+            content: '';
+            position: fixed; inset: 0; pointer-events: none;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><g fill="none" fill-opacity=".05"><path fill="#000" d="M0 0h1v1H0z"/></g></svg>');
+            opacity: .18;
+        }
+        .glass { background: rgba(255,255,255,0.65); backdrop-filter: blur(8px); border: 1px solid rgba(148,163,184,.35); }
+        .dark .glass { background: rgba(17,24,39,0.55); border-color: rgba(148,163,184,.25); }
+        .card { background: rgba(255,255,255,0.9); border: 1px solid rgba(148,163,184,.35); box-shadow: 0 8px 24px rgba(15,23,42,.06); }
+        .dark .card { background: rgba(17,24,39,0.75); border-color: rgba(148,163,184,.25); box-shadow: 0 10px 28px rgba(0,0,0,.35); }
+        .section-title { font-weight: 800; letter-spacing: -.01em; background: linear-gradient(90deg, #000, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .dark .section-title { background: linear-gradient(90deg, #fff, #3b82f6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        /* Basic typography for readability */
+        main h1 { font-size: 1.75rem; font-weight: 800; margin: 0 0 1rem; }
+        main h2 { font-size: 1.375rem; font-weight: 700; margin-top: 2rem; margin-bottom: .75rem; }
+        main h3 { font-size: 1.125rem; font-weight: 600; margin-top: 1.25rem; margin-bottom: .5rem; }
+        main p { margin: .75rem 0; line-height: 1.7; }
+        main ul { list-style: disc; padding-left: 1.25rem; margin: .75rem 0; }
+        main li { margin: .35rem 0; }
+        a { color: #2563eb; text-decoration: underline; }
+        .dark a { color: #60a5fa; }
+        .btn { display:inline-flex; align-items:center; gap:.5rem; padding:.55rem 1rem; border-radius:.65rem; font-weight:600; transition: transform .12s ease, box-shadow .2s ease, background .2s ease; }
+        .btn:active { transform: translateY(1px); }
+        .btn-primary { color:#fff; background-image: linear-gradient(135deg, #3b82f6, #6366f1); box-shadow: 0 6px 16px rgba(59,130,246,.25); }
+        .btn-primary:hover { box-shadow: 0 10px 22px rgba(59,130,246,.35); }
+        .btn-outline { color:#1f2937; background:transparent; border:1px solid rgba(148,163,184,.45); }
+        .dark .btn-outline { color:#e5e7eb; border-color: rgba(148,163,184,.35); }
+        .btn-outline:hover { background: rgba(148,163,184,.08); }
+        .dark .btn-outline:hover { background: rgba(148,163,184,.12); }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
+    <!-- Header -->
+    <header class="glass shadow p-4 flex justify-between items-center gap-4">
+        <h1 class="text-xl font-extrabold section-title">Nutzungsbedingungen</h1>
+        <div class="flex items-center gap-2">
+            <button id="backBtn" type="button" class="btn btn-outline">Zurück</button>
+            <button id="themeToggle" type="button" aria-label="Theme umschalten" class="btn btn-outline">🌙</button>
+        </div>
+    </header>
+
+    <!-- Content -->
+        <main class="p-4 md:p-6 max-w-5xl mx-auto h-[calc(100vh-80px)]">
+            <div class="card rounded-2xl p-6 h-full overflow-y-auto">
+                <h1>Nutzungsbedingungen</h1>
+                <p>Zuletzt aktualisiert: 30. September 2025</p>
+                <p>Für: <strong>PCBGaming</strong> – <a href="https://PCBGaming.at" rel="external">PCBGaming.at</a><br>
+                Anbieter: <strong>Jonas Feichtner</strong>, E‑Mail: <a href="mailto:j.feichtner06@gmail.com">j.feichtner06@gmail.com</a><br>
+                Anwendbares Recht: Österreich • Gerichtsstand (sofern zulässig): Salzburg</p>
+
+                <p>Hinweis: Dies ist ein kostenloses Hobby‑Projekt ohne In‑Game‑Käufe. Deutsch ist die rechtsverbindliche Fassung.
+                Die <a href="datenschutz.html">Datenschutzerklärung</a> ist Bestandteil dieser Bedingungen.</p>
+
+                <h2>1. Gegenstand des Dienstes</h2>
+                <p>PCBGaming ist eine nicht‑kommerzielle Website rund um ein Spiel. Der Dienst ermöglicht insbesondere:</p>
+                <ul>
+                    <li>Anzeige und Verwaltung von Highscores,</li>
+                    <li>Erstellen von Nutzerkonten (Benutzername, Passwort, E‑Mail, optional 2FA via Google Authenticator),</li>
+                    <li>Hochladen eines Profilbilds,</li>
+                    <li>Nutzung einer externen Spiele‑API („Gameboy“-API) zur Übermittlung/Aktualisierung von Scores.</li>
+                </ul>
+                <p>Der Anbieter behält sich vor, Funktionen jederzeit zu ändern, zu erweitern oder einzustellen.</p>
+
+                <h2>2. Registrierung, Mindestalter, Konto</h2>
+                <ul>
+                    <li>Mindestalter: 14 Jahre. Personen unter 14 Jahren dürfen den Dienst nicht nutzen.</li>
+                    <li>Bei Registrierung sind richtige und vollständige Angaben zu machen. Änderungen sind zeitnah zu aktualisieren.</li>
+                    <li>Der Schutz der Zugangsdaten liegt in Ihrer Verantwortung. Nutzen Sie ein starkes Passwort; aktivieren Sie nach Möglichkeit 2FA.</li>
+                    <li>Bei Verlust des 2FA‑Zugangs kann ein Kontowiederzugriff ggf. nicht gewährleistet werden.</li>
+                </ul>
+
+                <h2>3. Zulässige Nutzung, Fair‑Play und Anti‑Cheat</h2>
+                <p>Sie verpflichten sich, den Dienst nur im Rahmen der folgenden Regeln zu nutzen:</p>
+                <ul>
+                    <li>Kein Cheating oder Manipulieren von Scores (z. B. Bots, Exploits, Man‑in‑the‑Middle, gefälschte Requests an die API, Editieren lokaler Daten zur Score‑Einspeisung).</li>
+                    <li>Kein massenhaftes Scraping, keine Störung/Umgehung von Sicherheitsmechanismen, keine schädliche Software.</li>
+                    <li>Kein Missbrauch, Spam, Belästigung oder sonstiges rechtswidriges Verhalten.</li>
+                    <li>Maximal ein persönliches Konto pro Person (sofern nicht ausdrücklich erlaubt).</li>
+                </ul>
+                <p>Verstöße können u. a. zur Korrektur/Zurücksetzung von Highscores, Verwarnungen, temporären Sperren oder zur Löschung des Kontos führen.</p>
+
+                <h2>4. Nutzerinhalte (Profilbilder, Namen)</h2>
+                <ul>
+                    <li>Sie dürfen nur Inhalte hochladen/nutzen, an denen Sie die notwendigen Rechte besitzen und die keine Rechte Dritter verletzen.</li>
+                    <li>Verboten sind insbesondere rechtswidrige, beleidigende, diskriminierende oder jugendgefährdende Inhalte.</li>
+                    <li>Sie räumen dem Anbieter eine nicht‑exklusive, widerrufliche, weltweite, unentgeltliche Lizenz ein, Ihre Nutzerinhalte innerhalb des Dienstes zu speichern, technisch zu vervielfältigen, öffentlich zugänglich zu machen und darzustellen, soweit dies für Betrieb und Darstellung von PCBGaming erforderlich ist.</li>
+                    <li>Der Anbieter kann Inhalte prüfen und nach eigenem Ermessen entfernen, wenn ein Verstoß naheliegt.</li>
+                </ul>
+
+                <h2>5. Moderation und Durchsetzung</h2>
+                <p>Zur Aufrechterhaltung von Fair‑Play und Sicherheit behält sich der Anbieter insbesondere vor:</p>
+                <ul>
+                    <li>Scores zu prüfen, zu verifizieren und bei Manipulationsverdacht zurückzusetzen,</li>
+                    <li>Konten zu verwarnen, einzuschränken, zu sperren oder zu löschen,</li>
+                    <li>auffällige Interaktionen mit der externen API zu blockieren.</li>
+                </ul>
+
+                <h2>6. Verfügbarkeit, externe Dienste</h2>
+                <ul>
+                    <li>PCBGaming wird als Hobby‑Projekt ohne bestimmte Verfügbarkeitszusage („as is“) bereitgestellt.</li>
+                    <li>Wartung, Updates oder Ausfälle – insbesondere der externen „Gameboy“-API – können die Nutzung beeinträchtigen. Für Ausfälle oder Datenverluste besteht keine Haftung im rechtlich zulässigen Rahmen.</li>
+                </ul>
+
+                <h2>7. Geistiges Eigentum</h2>
+                <p>Die im Dienst bereitgestellten Inhalte und Softwarebestandteile des Anbieters sind urheberrechtlich geschützt. Soweit nicht ausdrücklich gestattet, sind Vervielfältigung, Bearbeitung und Verbreitung untersagt.</p>
+
+                <h2>8. Haftung</h2>
+                <ul>
+                    <li>Der Anbieter haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit sowie für Personenschäden.</li>
+                    <li>Bei leichter Fahrlässigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten) in Höhe des typischerweise vorhersehbaren Schadens.</li>
+                    <li>Im Übrigen ist die Haftung ausgeschlossen, soweit gesetzlich zulässig. Zwingende Verbraucherrechte bleiben unberührt.</li>
+                </ul>
+
+                <h2>9. Laufzeit und Beendigung</h2>
+                <ul>
+                    <li>Der Vertrag läuft auf unbestimmte Zeit und kann von Ihnen jederzeit durch Kontolöschung beendet werden.</li>
+                    <li>Der Anbieter kann den Zugang aus wichtigem Grund (z. B. erheblicher Verstoß) fristlos beenden.</li>
+                    <li>Auf Anfrage per E‑Mail löscht der Anbieter Ihr Konto und personenbezogene Daten gemäß <a href="datenschutz.html">Datenschutzerklärung</a>. Technische Backups können aus Sicherheitsgründen bis zu 30 Tage vorgehalten werden.</li>
+                </ul>
+
+                <h2>10. Änderungen dieser Bedingungen</h2>
+                <p>Der Anbieter kann diese Bedingungen ändern, sofern hierfür ein sachlicher Grund besteht (z. B. Funktionsänderungen, Rechtslage, Sicherheit). Über wesentliche Änderungen werden Sie vorab (z. B. per E‑Mail oder im Dienst) informiert. Widersprechen Sie den Änderungen innerhalb von 14 Tagen nicht und nutzen den Dienst weiter, gelten sie als angenommen. Bei Widerspruch können Sie den Vertrag kündigen.</p>
+
+                <h2>11. Anwendbares Recht und Gerichtsstand</h2>
+                <p>Es gilt österreichisches Recht unter Ausschluss seiner Kollisionsnormen. Für Verbraucher gelten die gesetzlichen Gerichtsstände; im Übrigen ist – soweit zulässig – Gerichtsstand Salzburg.</p>
+
+                <h2>12. Kommunikation</h2>
+                <p>Rechtserhebliche Mitteilungen können per E‑Mail erfolgen. Bitte halten Sie Ihre E‑Mail‑Adresse aktuell.</p>
+
+                <h2>13. Schlussbestimmungen</h2>
+                <ul>
+                    <li>Salvatorische Klausel: Sollte eine Bestimmung unwirksam sein, bleibt der Rest wirksam. Anstelle der unwirksamen Regel gilt die gesetzliche Regelung.</li>
+                    <li>Keine Abtretung ohne Zustimmung des Anbieters, außer gesetzlich zwingend.</li>
+                    <li>Höhere Gewalt (z. B. Ausfälle von Netzwerken/Drittanbietern) führt nicht zu Ansprüchen.</li>
+                </ul>
+
+                <hr class="my-6 border-slate-200/70 dark:border-slate-700/70" />
+                <p>
+                    Kontakt: <a href="mailto:j.feichtner06@gmail.com">j.feichtner06@gmail.com</a> • Datenschutz: <a href="datenschutz.html">datenschutz.html</a><br>
+                    Website: <a href="https://PCBGaming.at" rel="external">PCBGaming.at</a>
+                </p>
+        </div>
+    </main>
+
+    <script>
+        // Theme Toggle
+        (function(){
+            const btn = document.getElementById('themeToggle');
+            if(!btn) return;
+            function setIcon(){
+                const dark = document.documentElement.classList.contains('dark');
+                btn.textContent = dark ? '☀️' : '🌙';
+                btn.setAttribute('aria-label', dark ? 'Zum hellen Theme wechseln' : 'Zum dunklen Theme wechseln');
+            }
+            setIcon();
+            btn.addEventListener('click', ()=>{
+                const isDark = document.documentElement.classList.toggle('dark');
+                try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch(e) {}
+                setIcon();
+            });
+        })();
+
+        // Back behavior: close new tab if possible, otherwise navigate back
+        (function(){
+            function closeOrBack(){
+                try {
+                    if (window.opener && !window.opener.closed) {
+                        try { window.opener.focus(); } catch(e) {}
+                    }
+                } catch(e) {}
+                window.close();
+                setTimeout(function(){
+                    if (history.length > 1) {
+                        history.back();
+                    }
+                }, 10);
+            }
+            const backBtn = document.getElementById('backBtn');
+            if (backBtn) backBtn.addEventListener('click', closeOrBack);
+            try { history.pushState(null, '', location.href); } catch(e) {}
+            window.addEventListener('popstate', function(){ closeOrBack(); });
+        })();
+    </script>
+</body>
+</html>
